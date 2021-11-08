@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const odleglosc = parseInt(prompt('Podaj długość przebytej trasy:'));
+        const cena = parseInt(prompt('Podaj cenę paliwa za litr'));
+        const spalanie = parseInt(prompt('Ile samochod pali na 100 km?'));
+        const suma = (odleglosc / 100) * spalanie * cena;
+        document.write('Przejazd kosztuje:' + suma + 'pln');
+
+    </script>
+
+
+</body>
+
+</html>
