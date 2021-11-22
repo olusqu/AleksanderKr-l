@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method="POST">
+
+        <input type="number" name="liczba" placeholder="Podaj liczbe tygodnia" />
+        <input type="submit" value="Wyswietl" />
+    </form>
+    <div class="wynik"></div>
+    <script>
+        const formularz = document.querySelector('form');
+        const diw = document.querySelector('div.wynik');
+        formularz.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const liczba = document.querySelector('input[name="liczba"]').value * 1;
+            if (liczba == 1) {
+                diw.textContent = `Poniedzialek`;
+            }
+            else if (liczba == 2) {
+                diw.textContent = `Wtorek`;
+            }
+            else if (liczba == 3) {
+                diw.textContent = `Środa`;
+            }
+            else if (liczba == 4) {
+                diw.textContent = `Czwartek`;
+            }
+            else if (liczba == 5) {
+                diw.textContent = `Piątek`;
+            }
+            else if (liczba == 6) {
+                diw.textContent = `Sobota`;
+            }
+            else if (liczba == 7) {
+                diw.textContent = `Niedziela`;
+            }
+        });
+
+    </script>
+</body>
+
+</html>
