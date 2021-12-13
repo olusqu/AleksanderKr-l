@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz</title>
+</head>
+
+<body>
+    <form action="" method="POST">
+        <input type="number" name="l1" placeholder="liczba 1" />
+        <input type="number" name="l2" placeholder="liczba 2" />
+        <input type="submit" value="Oblicz" />
+        <div class="wynik"></div>
+        <script>
+            const formularz = document.querySelector('form');
+
+            const diw = document.querySelector('div.wynik')
+            formularz.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const l1 = document.querySelector('input[name=JK]').value * 1;
+                const l2 = document.querySelector('input[name=JK2]').value * 1;
+                const suma = l1 + l2;
+                diw.textContent = 'Suma wynosi:' + suma;
+
+            });
+
+
+
+        </script>
+    </form>
+
+</body>
+
+</html>
