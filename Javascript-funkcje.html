@@ -17,12 +17,16 @@
     <script>
         const formularz = document.querySelector('form');
         const divwynik = document.querySelector('div.wynik')
+
+        const sumuj = function (x, y) {
+            return `Suma liczb ${x} i ${y} wynosi: ${x + y}`;
+        }
         formularz.addEventListener('submit', (e) => {
             e.preventDefault();
             const l1 = document.querySelector('input[name=l1]').value * 1;
             const l2 = document.querySelector('input[name=l2]').value * 1;
             const suma = l1 + l2;
-            divwynik.textContent = 'Suma wynosi:' + suma;
+            divwynik.textContent = sumuj(l1, l2);
         });
     </script>
 </body>
