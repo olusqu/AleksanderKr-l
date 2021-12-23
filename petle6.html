@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <input type="number" name="liczba1" placeholder="Wpisz pierwszą liczbę" />
+        
+        <input type="submit" value="Oblicz" />
+    </form>
+    <div class="Wynik"></div>
+    <script>
+
+        const formularz = document.querySelector('form');
+        const check = document.querySelector('div.Wynik');
+        formularz.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            const n = document.querySelector('input[name= "liczba1"]').value * 1;
+            
+            if(n<2)
+            check.textContent = `liczba ${n} nie jest liczba pierwsza`; 
+		
+	for(let i=2;i*i<=n;i++)
+		if(n%i==0){
+			check.textContent = `liczba ${n} nie jest liczbą pierwsza`; 
+        }else{
+            check.textContent = `liczba ${n} jest liczbą pierwsza`;
+        }
+        });
+    </script>
+</body>
+</html>
