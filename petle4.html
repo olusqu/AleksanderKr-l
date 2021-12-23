@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silnia</title>
+</head>
+<body>
+    <form action="" method="POST">
+    
+        <input type="number" name="licz1" placeholder="wpisz liczbę" />
+        <input type="submit" value="Oblicz" />
+    
+    </form>
+    <div class="wynik"></div>
+    <script>
+
+        const formularz = document.querySelector('form');
+        const silnia = document.querySelector('div.wynik');
+        formularz.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            const liczba1 = document.querySelector('input[name= "licz1"]').value * 1;
+            let x = 1;
+
+            for(let i = l1; i > 0; i--){
+                x = x * i;            
+            }
+            silnia.textContent = `${x} `;
+        });
+    </script>
+</body>
+</html>
