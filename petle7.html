@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+        
+        <input type="liczba1" name="licz1" placeholder="Wpisz x" />
+        <input type="liczba2" name="licz2" placeholder="Wpisz y" />
+        <input type="submit" value="Oblicz" />
+    </form>
+    <div class="wynik"></div>
+    <script>
+        const formularz = document.querySelector('form');
+        const n = document.querySelector('div.wynik');
+        formularz.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            const x = document.querySelector('input[name= "licz1"]').value * 1;
+            const y = document.querySelector('input[name="licz2"]').value * 1;
+            
+            
+            var suma = 0;
+            var ilosc = 0;
+            var srednia = 0;
+            for(let i = x; i <= y; i++){
+                ilosc++;
+                suma += i;
+            }
+            srednia = suma/ilosc;
+            n.textContent = `${suma} / ${ilosc} = ${srednia}`;
+
+        });
+    </script>
+</body>
+</html>
