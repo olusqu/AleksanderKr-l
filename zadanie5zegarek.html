@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATA I CZAS</title>
+</head>
+<body>
+    <div class="zegarek"></div>
+<script>
+
+    const diva = document.querySelector('.zegarek'); //obiekt typu data i czas
+    const zegarek = function(){
+        const czas = new Date();
+    //tworzymy zmienne przechowujące godziny,minuty i sekundy
+let godzina = czas.getHours();
+let minuta = czas.getMinutes();
+let sekunda = czas.getSeconds();
+
+//zera przewodnie
+if (godzina < 10) godzina = '0' + godzina;
+if (minuta < 10) minuta = '0' + minuta;
+if (sekunda < 10) sekunda = '0' + sekunda;
+
+diva.textContent = `${godzina}:${minuta}:${sekunda}`;
+
+};
+zegarek();
+setInterval(zegarek, 1000);
+</script>
+</body>
+</html>
