@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formularz</title>
+    <title>Document</title>
 </head>
-
 <body>
-    <form action="" method="POST">
-        <input type="number" name="JK" placeholder="wpisz pierwszą liczbę" />
-        <input type="number" name="JK2" placeholder="wpisz drugą liczbę" />
-        <input type="submit" value="Oblicz" />
-        <div class="wynik"></div>
-        <script>
-            //Odwołujemy się do formularza(pobieramy formularz i przypisujemy do zmiennej)
-            const formularz = document.querySelector('form');
-            //pobieramy div'a o klasie wynik
+<h1> programowanie obiektowe w JS</h1>
+<script src= "komis.js"></script>
+<script src= "samochod.js"></script>
+<script>
+// tutaj piszemy kod
+const divW=document.querySelector('div.wynik');
+const pedik = new Samochod('Peugeot', '307', 1998, 3000, 7);
+const kiaCeed = new Samochod('KIA', 'Ceed', 2016,22000, 6);
+console.log(pedik.marka);
+console.log(pedik.model);
+console.log(pedik.rocznik);
+console.log(pedik.cena);
+console.log(pedik.spalanie);
+console.log('//////////////////////');
+console.log(kiaCeed.marka);
+console.log(kiaCeed.model);
+console.log(kiaCeed.rocznik);
+console.log(kiaCeed.cena);
+console.log(kiaCeed.spalanie);
 
-            const diw = document.querySelector('div.wynik')
+console.log('Wiek samochodu pedik: '+ pedik.wiek());
 
-            //przypisujemy do formularza obsługę zdarzenia submit
-            formularz.addEventListener('submit', (e) => {
-                e.preventDefault();
-                //tworzymy zmienne
-                const l1 = document.querySelector('input[name=JK]').value * 1;
-                const l2 = document.querySelector('input[name=JK2]').value * 1;
+console.log('Wiek samochodu kiaCeed: '+ kiaCeed.wiek());
 
-                //tworzymy zmienną suma przechowującą sumę liczb z formularza
-                const suma = l1 + l2;
-                //wyświetlamy wartość zmiennej suma w divie o klasie wynik
-                diw.textContent = 'Suma wynosi:' + suma;
+//tworzymy obiekty klasy 
 
-            });
+const wysypisko = new komis('Wysypisko');
+wysypisko.dodajSamochod(pedik);
+wysypisko.dodajSamochod(kiaCeed);
+divW.innerHTML=wysypisko.wyswietlSamochody();
 
-
-
-        </script>
-    </form>
-
+</script>
 </body>
-
 </html>
