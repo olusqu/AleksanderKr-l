@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODEL DOM zadania</title>
+</head>
+<body>
+        <h1 class="naglowek">Tak było</h1>
+        <div class="diw">Kacper L... sprzedaje kostki siana.</div>
+        <p class="akapit1">Piotrek G...></p>
+        <p class="akapit2">Hubert Ziemba ma fajny fryz</p>
+<style>
+    body{
+        font-family:sans-serif;
+        color:gray;
+    }
+    .naglowek{
+    color:green;
+    }
+    .diw{
+    background-color:indigo;
+    }
+    .akapit1{
+        background-color: pink;
+    }
+    .akapit2{
+        background-color:blue;
+    }
+    .zmianaStyliDiva{
+        background-color:darkgreen;
+    }
+</style>
+<script>
+    const p1=document.querySelector('p.akapit1');
+    //dodajemy do akapitu treść
+    p1.innerHTML+='<br>Piotrek mówi: "Tak jest! Tak jest!"'
+// Z2 pobieramy naglowek
+const naglowekH1=document.querySelector('h1.naglowek');
+naglowekH1.textContent='Przemek K...lubi Tak jest! Tak jest!';
+//Z3
+const divW=document.querySelector('div.diw');
+//zmieniamy styl czcionki diva
+divW.style.fontFamily='Courier New';
+divW.style.color='red';
+divW.classList.add('zmianaStyliDiva');
+//Z4
+//tworzymy nowy element h2
+const nowynaglowek = document.createElement('h2');
+nowynaglowek.textcontent = 'Pan S...pożycza na stałe pedika';
+document.querySelector('p.akapit2').appendChild(nowynaglowek);
+p1.remove();
+</script>
+    </body>
+</html>
