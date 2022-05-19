@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularze</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<style>
+div{
+ display: flex;
+ margin: 5px;
+ 
+}
+
+div label {
+    display: block;
+    width: 200px;
+}
+
+input[type=reset]{
+    margin-right: 30px;
+    width:160px;
+    height:70px;
+}
+input[type=submit]{
+    margin-left:30px;
+    width:200px;
+    height:70px;
+}
+
+.dane{
+    display: block;
+}
+</style>
+    <form action="" method="POST">
+        <div>
+            <label for="imie">Podaj imie: </label>
+            <input type="text" name="imie" id="imie">
+        </div>
+        <div>
+            <label for="nazwisko">Podaj nazwisko: </label>
+            <input type="text" name="nazwisko" id="nazwisko" required>
+        </div>
+        <div>
+            <label for="telefon">Podaj telefon: </label>
+            <input type="tel" name="telefon" id="telefon">
+        </div>
+        <div>
+            <label for="e-mail">Podaj e-mail: </label>
+            <input type="email" name="e-mail" id="e-mail">
+        </div>
+        <div>
+            <input type="reset" value="Resetuj">
+            <input type="submit" value="submit">
+        </div>
+    </form>
+
+    <div class="dane">Tu będą dane z formularza</div>
+    <script>
+        const form = document.querySelector('form');
+        const inputImie = document.querySelector('input[name="imie"]');
+        const inputNazwisko = document.querySelector('input[name="nazwisko"]');
+        const inputTelefon = document.querySelector('input[name="telefon"]');
+        const inputEmail = document.querySelector('input[name="e-mail"]');
+        const div = document.querySelector('div.dane');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+
+            const imie = inputImie.value;
+            const nazwisko = inputNazwisko.value;
+            const telefon = inputTelefon.value;
+            const email = inputEmail.value;
+
+            if(imie === '' || nazwisko === '' || telefon === '' || email === ''){
+                div.innerHTML = '<h3> Uzupełnij wszystkie pola !!! </h3>'
+            }else{
+                div.innerHTML = `
+                <h2> Dane z formularza: </h2>
+                <p> Imie: ${imie} </p>
+                <p> Nazwisko: ${nazwisko} </p>
+                <p> Telefon: ${telefon} </p>
+                <p> E-mail: ${email} </p>
+            `;
+            }
+        })
+    </script>
+</body>
+</html>
