@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form_2</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <div>
+            <input type="checkbox" name="liczby" id="pierwsza" value="1">
+            <label for="pierwsza">1</label>
+        </div>
+        <div>
+            <input type="checkbox" name="liczby" id="druga" value="2">
+            <label for="druga">2</label>  
+        </div>
+        <div>
+            <input type="checkbox" name="liczby" id="trzecia" value="3">
+            <label for="trzecia">3</label>    
+        </div>
+        <div>
+            <input type="submit" value="Wyślij">
+        </div>
+    </form>
+    <div class="wynik">Wybrano: </div>
+    <script>
+        const form = document.querySelector('form');
+        const checkbox = document.querySelectorAll('input[type="checkbox"]');
+        const wynik = document.querySelector('.wynik');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            for(i = 0; i <= checkbox.length; i++){
+                if(checkbox[i].checked){
+                    wynik.innerHTML += `
+                        <p>${checkbox[i].value}</p>
+                        `;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
